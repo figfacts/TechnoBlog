@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const dates = require('./utils/dates');
+const helpers = require('./utils/dates');
 
 
 const app = express();
@@ -22,7 +22,8 @@ const sess = {
 };
 app.use(session(sess));
 
-const hbs = exphbs.create({ dates });
+const hbs = exphbs.create({ helpers });
+
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
