@@ -16,7 +16,7 @@ const loginFormHandler = async function(event) {
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {
-    alert('Unsuccessfully failed to login');
+    alert('Incorrect login credentials. Please try again');
   }
 };
 
